@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 122px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+}
+
+#search-button {
+    margin-left: 50px;
+    margin-top: -5px;
+    width: 100px;
+    height: 50px;
+    background-color: auto;
+}
+
+#carrito {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#perfil {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#menu {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#Buscar {
+    margin-left: 300px;
+    margin-top: -5px;
+    width: 500px;
+    height: 50px;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #9DCFDD;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #FFFFFF;
+  }
+  
+.rectangulo {
+    position: relative; /* Cambiado a "relative" en lugar de "absolute" */
+    width: 100%; /* Cambiado a 100% para que se ajuste al ancho del contenedor */
+    height: 85px;
+    background: #9DCFDD;
+    margin-top: -10px; /* Espacio entre el rectángulo y el nav negro */
+}
+.titulo-contenedor {
+    display: flex;
+    align-items: center;
+}
+
+.titulo-catalogo {
+    width: 221px;
+    height: 42px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+}
+
+.titulo-herramientas {
+    width: 389px;
+    height: 55px;
+    left: 339px;
+    top: 204px;
+    font-family: 'JejuGothic', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 39px;
+    color: #FFFFFF;
+}
+
+
+.rectangulo2 {
+    position: relative;
+    width: 1280px;
+    height: 209px;
+    margin: 0 auto;
+    margin-top: 30px; /* Ajusta el valor según sea necesario */
+    background: #9DCFDD;
+}
+
+.contenedor-botones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.boton-desplegable {
+    position: relative;
+}
+
+.boton-desplegable button {
+    background-color: #9DCFDD;
+    margin: 10px;
+    margin-top: 25px;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+    position: relative;
+}
+
+.boton-desplegable button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+    transition: transform 0.3s;
+}
+
+.boton-desplegable:hover button {
+    background-color: #AEE2F1;
+}
+
+.boton-desplegable:focus-within button {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+.boton-desplegable:hover button::after,
+.boton-desplegable:focus-within button::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.contenido-desplegable {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Cambiado a "left" en lugar de "right" */
+    width: 200px;
+    background-color: #F0F0F0;
+    color: #333333;
+    padding: 10px;
+    z-index: 1;
+    transition: opacity 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.boton-desplegable:hover .contenido-desplegable {
+    display: block;
+}
+
+.boton-desplegable:focus-within .contenido-desplegable {
+    opacity: 1;
+    transform: translateX(10px);
+}
+.imagen-ferreteria {
+    position: absolute;
+    top: 100px; /* Ajusta la posición vertical según sea necesario */
+    left: 580px; /* Ajusta la posición horizontal según sea necesario */
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    height: auto;
+}
+
+.imagen-ferreteria img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.imagen-ideas {
+    position: absolute;
+    top: 100px; /* Ajusta la posición vertical según sea necesario */
+    left: 900px; /* Ajusta la posición horizontal según sea necesario */
+    width: 150px; /* Ajusta el ancho según sea necesario */
+    height: auto;
+}
+
+.imagen-ideas img {
+    width: 100%;
+    height: auto;
+}
+
+
+.recimg{
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    width: 90px;
+    height: 30px;
+    background-color: #9DCFDD; /* Color del rectángulo */
+}
+
+.FERRETERIATXT{
+    color: #FFFFFF; /* Color del texto */
+    font-family: "JejuGothic", sans-serif;
+   
+}
+
+.recimg2 {
+    position: absolute;
+    top: 0;
+    right: 60px; /* Ajusta el valor según sea necesario para moverlo a la derecha */
+    width: 90px;
+    height: 30px;
+    background-color: #9DCFDD; /* Color del rectángulo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.IDEASTXT {
+    color: #FFFFFF; /* Color del texto */
+    font-family: "JejuGothic", sans-serif;
+}
+
+.textodecategorias{
+    text-align: justify;
+    max-width: 500px;
+}

@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: #9DCFDD;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+}
+
+#search-button {
+    width: 100px;
+    height: 50px;
+    background-color: #9DCFDD;
+}
+
+#carrito {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#perfil {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#menu {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    background: #9DCFDD;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.sobrenosotros {
+    width: 100%;
+    max-width: 1280px; /* Establece el ancho máximo para evitar que la imagen se extienda más allá de ese ancho */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    position: relative;
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se extienda más allá del ancho del contenedor */
+}
+
+.sobrenosotros img {
+    width: 100%;
+    height: auto;
+    object-fit: none; /* Evita que la imagen se ajuste automáticamente */
+    max-height: 202px; /* Establece la altura máxima de la imagen */
+    filter: blur(5px);
+}
+
+.sobrenosotros p {    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: justify;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.texto-lorem {
+    text-align: center;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

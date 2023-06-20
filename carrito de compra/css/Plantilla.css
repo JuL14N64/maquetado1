@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 122px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+#logos{
+
+    margin-left: 150px;
+
+}
+
+#logo {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+#barra_busqueda {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    margin-left: 200px;
+}
+
+#barra_busqueda input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 5px 10px;
+}
+
+.header-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 100px;
+  
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+.product button {
+    padding: 10px 20px;
+    background-color: #9DCFDD;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#logos{
+
+    margin-left: 150px;
+
+}
+
+
+
+
+
