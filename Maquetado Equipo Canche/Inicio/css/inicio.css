@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 122px; /* Establece la altura fija del encabezado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    width: 200px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+}
+
+#search-button {
+    margin-left: 50px;
+    margin-top: -5px;
+    width: 100px;
+    height: 50px;
+    background-color:auto;
+}
+
+#carrito{
+    margin-left: 250px;
+    width: 100px; 
+    height: auto; 
+}
+
+#perfil {
+  
+    margin-left: 60px;
+    width: 70px; 
+    height: auto; 
+}
+
+#menu{
+    margin-left: 80px;
+    width: 100px; 
+    height: auto; 
+}
+
+
+
+#Buscar{
+    margin-left: 300px;
+    margin-top: -5px;
+    width: 500px;
+    height: 50px;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+body {
+    background-image: url("/images/fondo1.png"); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    height: 100%;
+    width: auto;
+    position: relative;
+    text-align: justify;
+    
+}
+
+#titulo{
+
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+main{
+margin: auto;
+display: flex;
+flex-direction: column;
+}
+
+.main-content {
+    position: relative; /* Establece el posicionamiento relativo para los elementos dentro de .main-content */
+}
+
+
+
+main p {
+
+    display: grid;
+    /*columnas*/
+    grid-template-columns: repeat(4, 1fr);
+    clear: both;
+    margin-top: 60px ;
+}
+
+
+#sub {
+    display: grid;
+    clear: both;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#soldando{
+    display: grid;
+    clear: both;
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: left;
+    width: 30%;
+}
+
+#madera{
+
+    margin-top: -1150px;
+    font-size: 20px;
+    width: 30%;
+    margin-left: 1100px;
+
+}
+
+#sub3{
+    text-align: right;
+    margin-left: 1000px;
+}
+
+#sub4{
+    text-align: right;
+    margin-left: 1300px;
+    margin-top: -650px;
+}
+
+
+
+
+
+
+footer{
+    
+    background: #9DCFDD;
+    padding: 20px;
+    height: 70px; /* Establece la altura fija del encabezado */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 38%;
+   
+
+    
+}
+
+
+
+
+
+
+
+
