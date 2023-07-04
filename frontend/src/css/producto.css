@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: #9DCFDD;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+}
+
+#search-button {
+    width: 100px;
+    height: 50px;
+    background-color: #9DCFDD;
+}
+
+#carrito {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#perfil {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+#menu {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    margin: 0 10px;
+    
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    background: #9DCFDD;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+.contenedor{
+    margin-top: 20px;
+    display:contents;
+    margin-top: 20px;
+    text-align: flex;
+
+}
+.caja{
+    width: 250px ;
+    height: 250px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.destor{
+    width: 250px ;
+    height: 250px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.mazo{
+    width: 250px ;
+    height: 250px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.taladro{
+    width: 250px ;
+    height: 250px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+.cierra{
+    width: 250px ;
+    height: 250px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,12 @@
+
+header{
+    display: flex;
+    justify-content: flex-end;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+}
+
