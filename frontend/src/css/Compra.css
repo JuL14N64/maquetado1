@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 80px; /* Asegura que el contenido no se superponga con el footer */
 }
 
 header {
@@ -31,13 +34,10 @@ header {
     margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-
-
 header p {
     margin: 0;
     font-size: 18px;
 }
-
 
 .search-bar {
     display: flex;
@@ -60,32 +60,30 @@ header p {
     margin-top: -5px;
     width: 100px;
     height: 50px;
-    background-color:auto;
 }
 
-#carrito{
-    margin-left: 250px;
-    width: 100px; 
-    height: auto; 
+#carrito {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
 }
 
 #perfil {
-  
-    margin-left: 60px;
-    width: 70px; 
-    height: auto; 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 70px;
+    height: auto;
 }
 
-#menu{
-    margin-left: 80px;
-    width: 100px; 
-    height: auto; 
+#menu {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
 }
 
-
-
-#Buscar{
-    margin-left: 300px;
+#Buscar {
     margin-top: -5px;
     width: 500px;
     height: 50px;
@@ -113,6 +111,20 @@ nav ul li a {
     font-size: 18px;
     font-weight: bold;
 }
+
+footer {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 80px; /* Establece la altura fija del footer */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fija el footer en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 
 body{
     background-color: rgb(219, 219, 219);

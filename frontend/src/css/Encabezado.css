@@ -1,12 +1,83 @@
 
-header{
-    display: flex;
-    justify-content: flex-end;
-}
-.header-content {
+/* Encabezado.css */
+
+header {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 122px;
     display: flex;
     align-items: center;
-    
-    width: 100%;
-}
+    justify-content: space-between;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #logo {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  #Buscar {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  #search-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+  }
+  
+  #carrito {
+    margin-left: 10px;
+    width: 100px;
+    height: auto;
+  }
+  
+  #perfil {
+    margin-left: 10px;
+    width: 70px;
+    height: auto;
+  }
+  
+  #menu {
+    margin-left: 10px;
+    width: 100px;
+    height: auto;
+  }
+  
+  nav {
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
 

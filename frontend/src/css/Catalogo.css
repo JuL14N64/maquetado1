@@ -1,4 +1,6 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,11 +8,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 80px; /* Asegura que el contenido no se superponga con el footer */
 }
 
 header {
     background: #9DCFDD;
     padding: 20px;
+    height: 122px; /* Establece la altura fija del encabezado */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,13 +24,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
 }
 
 #logo {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
+    width: 200px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
 header p {
@@ -38,12 +41,12 @@ header p {
     display: flex;
     align-items: center;
     flex-grow: 1;
+    justify-content: center;
 }
 
 .search-bar input[type="text"] {
     padding: 5px;
     margin-right: 10px;
-    width: 300px;
 }
 
 .search-bar button {
@@ -51,27 +54,37 @@ header p {
 }
 
 #search-button {
+    margin-left: 50px;
+    margin-top: -5px;
     width: 100px;
     height: 50px;
-    background-color: #9DCFDD;
 }
 
 #carrito {
-    width: 50px;
-    height: auto;
     margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
 }
 
 #perfil {
-    width: 50px;
-    height: auto;
     margin-left: 10px;
+    margin-right: 10px;
+    width: 70px;
+    height: auto;
 }
 
 #menu {
-    width: 50px;
-    height: auto;
     margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
+}
+
+#Buscar {
+    margin-top: -5px;
+    width: 500px;
+    height: 50px;
 }
 
 nav {
@@ -88,7 +101,6 @@ nav ul {
 
 nav ul li {
     margin: 0 10px;
-    
 }
 
 nav ul li a {
@@ -97,6 +109,25 @@ nav ul li a {
     font-size: 18px;
     font-weight: bold;
 }
+
+footer {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 80px; /* Establece la altura fija del footer */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fija el footer en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 
 footer {
     background: #9DCFDD;

@@ -10,81 +10,11 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-header {
-    background: #9DCFDD;
-    padding: 20px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    
-}
 
-#logos{
 
-    margin-left: 150px;
 
-}
 
-#logo {
-    width: 200px;
-    height: auto;
-    margin-right: 20px;
-}
-
-#barra_busqueda {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: center;
-    margin-left: 200px;
-}
-
-#barra_busqueda input[type="text"] {
-    padding: 5px;
-    margin-right: 10px;
-}
-
-#search-button {
-    padding: 5px 10px;
-}
-
-.header-icons img {
-    width: 30px;
-    height: 30px;
-    margin-right: 100px;
-  
-}
-
-nav {
-    background-color: black;
-    color: white;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
 
 main {
     padding: 20px;

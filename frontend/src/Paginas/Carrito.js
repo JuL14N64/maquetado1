@@ -14,44 +14,7 @@ function Carrito() {
         <>
             <Encabezado />
             <>
-                <header>
-                    <div className="header-content">
-                        <img src="images/LOGO.png" alt="Logo" id="logo" />
-                        <div className="search-bar" id="barra_busqueda">
-                            <input type="text" placeholder="Buscar..." id="Buscar" />
-                            <button type="submit" id="search-button">
-                                Buscar
-                            </button>
-                        </div>
-                        <div className="header-icons" id="logos">
-                            <img src="images/carrito1.png" alt="Carro" id="carrito" />
-                            <img src="images/Perfil1.png" alt="Perfil" id="perfil" />
-                            <img src="images/menu.png" alt="Menu" id="menu" />
-                        </div>
-                    </div>
-                </header>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#">Catálogo</a>
-                        </li>
-                        <li>
-                            <a href="#">Categorías</a>
-                        </li>
-                        <li>
-                            <a href="#">Productos</a>
-                        </li>
-                        <li>
-                            <a href="#">Contáctanos</a>
-                        </li>
-                        <li>
-                            <a href="#">Iniciar Sesión</a>
-                        </li>
-                    </ul>
-                </nav>
+                
                 <main>
                     <h1>Bienvenido a nuestra tienda en línea</h1>
                     <p>

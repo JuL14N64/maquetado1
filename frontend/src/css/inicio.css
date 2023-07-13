@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 * {
     margin: 0;
@@ -8,12 +9,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 80px; /* Asegura que el contenido no se superponga con el footer */
 }
 
 header {
     background: #9DCFDD;
     padding: 20px;
-     /* Establece la altura fija del encabezado */
+    height: 122px; /* Establece la altura fija del encabezado */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +25,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
 }
 
 #logo {
@@ -32,13 +33,10 @@ header {
     margin-right: 20px; /* Espacio entre la imagen y el texto */
 }
 
-
-
 header p {
     margin: 0;
     font-size: 18px;
 }
-
 
 .search-bar {
     display: flex;
@@ -61,32 +59,30 @@ header p {
     margin-top: -5px;
     width: 100px;
     height: 50px;
-    background-color:auto;
 }
 
-#carrito{
-    margin-left: 250px;
-    width: 100px; 
-    height: auto; 
+#carrito {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
 }
 
 #perfil {
-  
-    margin-left: 60px;
-    width: 70px; 
-    height: auto; 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 70px;
+    height: auto;
 }
 
-#menu{
-    margin-left: 80px;
-    width: 100px; 
-    height: auto; 
+#menu {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
 }
 
-
-
-#Buscar{
-    margin-left: 300px;
+#Buscar {
     margin-top: -5px;
     width: 500px;
     height: 50px;
@@ -114,47 +110,55 @@ nav ul li a {
     font-size: 18px;
     font-weight: bold;
 }
+footer {
+    background: #9DCFDD;
+    padding: 20px;
+    height: 70px; /* Establece la altura fija del footer */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Fija el footer en la parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 
 body {
     background-image: url("../images/fondo1.png"); /* Ruta de la imagen de fondo */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
     background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
     height: 100%;
-    width: auto;
+    width: 100%;
     position: relative;
     text-align: justify;
-    
+    margin: 0;
+    padding: 0;
 }
 
-#titulo{
-
+#titulo {
     text-align: center;
     font-weight: bold;
     margin-top: 30px;
     font-size: 30px;
 }
 
-main{
-margin: auto;
-display: flex;
-flex-direction: column;
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-content {
     position: relative; /* Establece el posicionamiento relativo para los elementos dentro de .main-content */
 }
 
-
-
 main p {
-
     display: grid;
-    /*columnas*/
     grid-template-columns: repeat(4, 1fr);
     clear: both;
-    margin-top: 60px ;
+    margin-top: 60px;
 }
-
 
 #sub {
     display: grid;
@@ -165,7 +169,7 @@ main p {
     text-align: left;
 }
 
-#soldando{
+#soldando {
     display: grid;
     clear: both;
     margin-top: 30px;
@@ -174,48 +178,39 @@ main p {
     width: 30%;
 }
 
-#madera{
-
+#madera {
     margin-top: -1150px;
     font-size: 20px;
     width: 30%;
     margin-left: 1100px;
-
 }
 
-#sub3{
+#sub3 {
     text-align: right;
     margin-left: 1000px;
 }
 
-#sub4{
+#sub4 {
     text-align: right;
     margin-left: 1300px;
     margin-top: -650px;
     border-top: 100px;
 }
 
-
-
-
-
-
-footer{
-    
+footer {
     background: #9DCFDD;
     padding: 20px;
-    height: 70px; /* Establece la altura fija del encabezado */
+    height: 70px; /* Establece la altura fija del footer */
     display: flex;
     align-items: center;
     justify-content: space-between;
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-top: 50%;
-   
-
-    
+    position: fixed;
+    z-index: 999; /* Asegura que el footer se muestre encima del contenido */
 }
+
 
 
 
