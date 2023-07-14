@@ -28,8 +28,21 @@ conexion.connect(function (error) {
     }
 });
 
+
+//productos
+
 app.get('/obtenerProductos', (peticion, respuesta) => {
     const sql = "select * from productos";
+    conexion.query(sql, (error, resultado) => {
+        if (error) return respuesta.json({ mensaje: "error" });
+        return respuesta.json({ mensaje: "exitoso", contenido: resultado });
+    })
+});
+
+//categorias
+
+app.get('/obtenerCategorias', (peticion, respuesta) => {
+    const sql = "select * from categorias";
     conexion.query(sql, (error, resultado) => {
         if (error) return respuesta.json({ mensaje: "error" });
         return respuesta.json({ mensaje: "exitoso", contenido: resultado });

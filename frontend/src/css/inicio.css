@@ -1,206 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-* {
+
+body {
+    
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 80px; /* Asegura que el contenido no se superponga con el footer */
-}
-
-header {
-    background: #9DCFDD;
-    padding: 20px;
-    height: 122px; /* Establece la altura fija del encabezado */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#logo {
-    width: 200px; /* Ajusta el ancho de la imagen según tus necesidades */
-    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
-}
-
-header p {
-    margin: 0;
-    font-size: 18px;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    justify-content: center;
-}
-
-.search-bar input[type="text"] {
-    padding: 5px;
-    margin-right: 10px;
-}
-
-.search-bar button {
-    padding: 5px 10px;
-}
-
-#search-button {
-    margin-left: 50px;
-    margin-top: -5px;
-    width: 100px;
-    height: 50px;
-}
-
-#carrito {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 100px;
-    height: auto;
-}
-
-#perfil {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 70px;
-    height: auto;
-}
-
-#menu {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 100px;
-    height: auto;
-}
-
-#Buscar {
-    margin-top: -5px;
-    width: 500px;
-    height: 50px;
-}
-
-nav {
-    background-color: black;
-    color: white;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-footer {
-    background: #9DCFDD;
-    padding: 20px;
-    height: 70px; /* Establece la altura fija del footer */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed; /* Fija el footer en la parte inferior */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-body {
     background-image: url("../images/fondo1.png"); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+    background-size: cover; /* La imagen se ajusta para cubrir todo el cuerpo */
     background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-    height: 100%;
-    width: 100%;
-    position: relative;
-    text-align: justify;
-    margin: 0;
-    padding: 0;
 }
 
+h1, p {
+    margin-bottom: 20px;
+    font-style: bold;
+}
+
+/* Estilos específicos para el contenido */
 #titulo {
     text-align: center;
-    font-weight: bold;
     margin-top: 30px;
-    font-size: 30px;
-}
-
-main {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main-content {
-    position: relative; /* Establece el posicionamiento relativo para los elementos dentro de .main-content */
-}
-
-main p {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    clear: both;
-    margin-top: 60px;
+    margin-bottom: 20px; /* Agregado margen inferior para separar el título del texto */
 }
 
 #sub {
-    display: grid;
-    clear: both;
-    margin-top: 30px;
-    font-size: 20px;
-    font-weight: bold;
     text-align: left;
+    margin-bottom: 10px;
+}
+
+#sub2 {
+    display: flex;
+    margin-bottom: 20px; /* Agregado margen inferior para separar el texto de las imágenes */
+}
+
+#sub2 p {
+    flex: 1;
+    margin-right: 20px;
 }
 
 #soldando {
-    display: grid;
-    clear: both;
-    margin-top: 30px;
-    font-size: 20px;
-    text-align: left;
-    width: 30%;
+    width: 300px;
+    height: auto;
+    margin-right: 10px; /* Ajustado margen derecho para separar las imágenes */
 }
 
 #madera {
-    margin-top: -1150px;
-    font-size: 20px;
-    width: 30%;
-    margin-left: 1100px;
+    width: 300px;
+    height: auto;
 }
 
-#sub3 {
-    text-align: right;
-    margin-left: 1000px;
-}
-
-#sub4 {
-    text-align: right;
-    margin-left: 1300px;
-    margin-top: -650px;
-    border-top: 100px;
-}
-
+/* Estilos para el footer */
 footer {
     background: #9DCFDD;
     padding: 20px;
-    height: 70px; /* Establece la altura fija del footer */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -208,8 +61,10 @@ footer {
     left: 0;
     width: 100%;
     position: fixed;
-    z-index: 999; /* Asegura que el footer se muestre encima del contenido */
+    z-index: 999;
 }
+
+
 
 
 

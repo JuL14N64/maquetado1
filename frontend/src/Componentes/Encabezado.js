@@ -36,9 +36,16 @@ function Encabezado() {
                         <input type="text" placeholder="Buscar..." id="Buscar"></input>
                         <button type="submit" id="search-button">Buscar</button>
                     </div>
-                    <img src={require("../images/carrito1.png")} alt="Carro" id="carrito"></img>
-                    <img src={require("../images/Perfil1.png")} alt="Perfil" id="perfil"></img>
-                    <img src={require("../images/menu.png")} alt="Menu" id="menu"></img>
+                    <button type='sumbit' id="boton_carrito" >
+                        <img src={require("../images/carrito1.png")} alt="Carro" id="carrito"></img>
+                    </button>
+                    <Link to="/Login" id="boton_perfil">
+                        <img src={require("../images/Perfil1.png")} alt="Perfil" id="perfil"></img>
+                    </Link>
+
+                    <button type='sumbit' id="boton_menu">
+                        <img src={require("../images/menu.png")} alt="Menu" id="menu"></img>
+                    </button>
                 </div>
             </header>
             <nav>

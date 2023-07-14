@@ -2,7 +2,7 @@ import React from "react";
 
 import Encabezado from "../Componentes/Encabezado";
 
-import Mascota from "../Componentes/CYTHE";
+import Mascota from "../Componentes/CYTHE2";
 
 //2 
 

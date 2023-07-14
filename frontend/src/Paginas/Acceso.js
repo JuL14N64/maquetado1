@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Encabezado from "../Componentes/Encabezado";
 
+import "../css/acceso.css";
 
 
 
@@ -40,16 +41,18 @@ function Acceso() {
     }
 
     return (
-        <form onSubmit={acceder}>
-            <input type='nombre' placeholder='Nombre' name='nombre'
-                onChange={(e) => setCampos({ ...campos, nombre_usuario: e.target.value })} />
-            <input type='email' placeholder='Email' name='correo_electronico'
-                onChange={(e) => setCampos({ ...campos, correo_electronico: e.target.value })} />
-            <input type='password' placeholder='Contraseña' name='contrasena'
-                onChange={(e) => setCampos({ ...campos, contrasenia: e.target.value })} />
-            <button type='sumbit'>Ingresar</button>
-
+        <form className="login-form" onSubmit={acceder}>
+            <h2>Registrarse</h2>
+            {error && <p className="error-message">{error}</p>}
+            <label htmlFor="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Nombre" name="nombre" onChange={(e) => setCampos({ ...campos, nombre_usuario: e.target.value })} />
+            <label htmlFor="correo_electronico">Email:</label>
+            <input type="email" id="correo_electronico" placeholder="Email" name="correo_electronico" className="email-input" onChange={(e) => setCampos({ ...campos, correo_electronico: e.target.value })} />
+            <label htmlFor="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena" onChange={(e) => setCampos({ ...campos, contrasenia: e.target.value })} />
+            <button type="submit">Registrarse</button>
         </form>
+
     )
 
 }

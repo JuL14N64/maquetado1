@@ -8,13 +8,15 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 80px; /* Asegura que el contenido no se superponga con el footer */
+    margin-bottom: 80px;
+    /* Asegura que el contenido no se superponga con el footer */
 }
 
 header {
     background: #9DCFDD;
     padding: 20px;
-    height: 122px; /* Establece la altura fija del encabezado */
+    height: 122px;
+    /* Establece la altura fija del encabezado */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,9 +29,12 @@ header {
 }
 
 #logo {
-    width: 200px; /* Ajusta el ancho de la imagen según tus necesidades */
-    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    width: 200px;
+    /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto;
+    /* La altura se ajusta automáticamente para mantener la proporción */
+    margin-right: 20px;
+    /* Espacio entre la imagen y el texto */
 }
 
 header p {
@@ -113,11 +118,12 @@ nav ul li a {
 footer {
     background: #9DCFDD;
     padding: 20px;
-    height: 80px; /* Establece la altura fija del footer */
+    height: 80px;
+    /* Establece la altura fija del footer */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed; /* Fija el footer en la parte inferior */
+
     bottom: 0;
     left: 0;
     width: 100%;
@@ -144,50 +150,57 @@ footer {
 
 /* todo lo que incluye el main  */
 
-.plomeria{
-    width: 330px ;
+.plomeria {
+    width: 330px;
     height: 250px;
     border-radius: 25px;
     margin-bottom: 20px;
 }
-.acabado{
-    width: 330px ;
+
+.acabado {
+    width: 330px;
     height: 250px;
     border-radius: 25px;
     margin-bottom: 20px;
 }
-.electrico{
-    width: 330px ;
+
+.electrico {
+    width: 330px;
     height: 250px;
     border-radius: 25px;
     margin-bottom: 20px;
 }
-.manual{
-    width: 330px ;
+
+.manual {
+    width: 330px;
     height: 250px;
     border-radius: 25px;
     margin-bottom: 20px;
 }
-.neumatica{
-    width: 330px ;
+
+.neumatica {
+    width: 330px;
     height: 250px;
     border-radius: 25px;
     margin-bottom: 20px;
 }
-.maquinaria{
-    width: 330px ;
+
+.maquinaria {
+    width: 330px;
     height: 250px;
     border-radius: 25px;
     margin-bottom: 20px;
 }
+
 /* todos los img estan aqui */
-.contenedor{
+.contenedor {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     text-align: flex;
 }
-.p{
+
+.p {
     display: flex;
     text-align: left;
 }
