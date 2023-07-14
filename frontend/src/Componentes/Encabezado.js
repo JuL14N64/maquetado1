@@ -56,6 +56,7 @@ function Encabezado() {
                     <li><Link to="/Productos">Productos</Link></li>
                     <li><Link to="/Contactanos">Contáctanos</Link></li>
                     <li><Link to="/Compra">Compra</Link></li>
+                    <li><Link to="/Dashboard">Dashboard</Link></li>
                     {
                         login ?
                             <>

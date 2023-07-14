@@ -15,6 +15,7 @@ import Compra from './Paginas/Compra';
 import Carrito from './Paginas/Carrito';
 import Acceso from './Paginas/Acceso';
 import Formulario from './Paginas/Formulario';
+import Dashboard from './Paginas/Dashboard1';
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
         <Route path='/Carrito' element={<Carrito />}></Route>
         <Route path='/Acceso' element={<Acceso />}></Route>
         <Route path='/Formulario' element={<Formulario/>}></Route>
+        <Route path='/Dashboard' element={<Dashboard/>}></Route>
+        
       </Routes>
     </BrowserRouter>
   );
