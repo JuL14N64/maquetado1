@@ -1,12 +1,14 @@
-import react, { useState } from 'react';
+import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
-import Encabezado from "../Componentes/Encabezado";
+
 
 import "../css/acceso.css";
+
+import {Link} from 'react-router-dom';
 
 
 
@@ -50,7 +52,9 @@ function Acceso() {
             <input type="email" id="correo_electronico" placeholder="Email" name="correo_electronico" className="email-input" onChange={(e) => setCampos({ ...campos, correo_electronico: e.target.value })} />
             <label htmlFor="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" placeholder="Contraseña" name="contrasena" onChange={(e) => setCampos({ ...campos, contrasenia: e.target.value })} />
+            <Link to="/Dashboard1">
             <button type="submit">Registrarse</button>
+            </Link>
         </form>
 
     )

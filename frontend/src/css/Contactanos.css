@@ -217,6 +217,48 @@ body{
     margin: 0 10px;
 }
 
+#contact-form-section {
+    background-color: #9DCFDD;
+    padding: 20px;
+    width: 30%;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  textarea, input[type="email"] {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  
+  
+
 
 
 

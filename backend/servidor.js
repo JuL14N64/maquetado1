@@ -39,6 +39,7 @@ app.get('/obtenerProductos', (peticion, respuesta) => {
     })
 });
 
+
 //categorias
 
 app.get('/obtenerCategorias', (peticion, respuesta) => {
@@ -72,15 +73,16 @@ app.post('/acceso', (peticion, respuesta) => {
 })
 
 app.post('/registrar', (peticion, respuesta) => {
-    const sql = "INSERT INTO usuarios(nombre_usuarios.correo_electronico,contrasenia) VALUES(?,?,sha1(?))";
+    const sql = "INSERT INTO usuarios(nombre_usuarios, correo_electronico, contrasenia) VALUES (?, ?, SHA1(?))";
     conexion.query(sql, [peticion.body.nombre_usuario, peticion.body.correo_electronico, peticion.body.contrasenia],
         (error, resultado) => {
-            if (error) return respuesta.json({ mensaje: "error en la consulta" });
+            if (error) {
+                return respuesta.json({ mensaje: "Error en la consulta", error });
+            }
             return respuesta.json({ Estatus: "Correcto" });
+        });
+});
 
-
-        })
-})
 
 // Iniciamos el servidor
 
