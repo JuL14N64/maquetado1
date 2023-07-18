@@ -33,9 +33,7 @@ function Encabezado() {
                     <Link to="/Acceso" id="boton_perfil">
                         <img src={require("../images/Perfil1.png")} alt="Perfil" id="perfil"></img>
                     </Link>
-                    <button type="sumbit" id="boton_menu">
-                        <img src={require("../images/menu.png")} alt="Menu" id="menu"></img>
-                    </button>
+                    
                 </div>
             </header>
             <nav>
