@@ -1,21 +1,17 @@
-// importar react
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "../css/Encabezado.css";
 
-// crear la funcion 
 function Encabezado() {
-    // Retomamos token
-    const login = localStorage.getItem('usuario');
+    const [login, setLogin] = useState(localStorage.getItem('Usuario')); // Cambiamos 'usuario' por 'Usuario'
     const navegacion = useNavigate();
 
-    // crear un metodo para salir 
     const salir = () => {
-        localStorage.clear();
-        navegacion('/');
+        localStorage.removeItem('Usuario'); // Cambiamos 'clear' por 'removeItem'
+        setLogin(null); // Actualizamos el estado para ocultar el botón "Cerrar sesión"
+        navegacion('/Inicio'); // Redirigimos al usuario a "/Inicio" después de cerrar sesión
     }
 
-    // metodo que regresa el HTML
     return (
         <>
             <header>
@@ -30,10 +26,18 @@ function Encabezado() {
                     <button type="sumbit" id="boton_carrito">
                         <img src={require("../images/carrito1.png")} alt="Carro" id="carrito"></img>
                     </button>
-                    <Link to="/Acceso" id="boton_perfil">
+                    <Link to="/Login" id="boton_perfil">
                         <img src={require("../images/Perfil1.png")} alt="Perfil" id="perfil"></img>
                     </Link>
-                    
+                    {login ? ( // Verificamos si el usuario ha iniciado sesión
+                        <>
+                            <button onClick={salir}>Cerrar sesión</button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to='/Login'>Login</Link>
+                        </>
+                    )}
                 </div>
             </header>
             <nav>
@@ -43,21 +47,11 @@ function Encabezado() {
                     <li><Link to="/Productos">Productos</Link></li>
                     <li><Link to="/Contactanos">Contáctanos</Link></li>
                     <li><Link to="/Compra">Compra</Link></li>
-                    {login ? (
-                        <>
-                            <button onClick={salir}>Salir</button>
-                        </>
-                    ) : (
-                        <>
-                            <Link to="/Acceso">Acceder</Link>
-                        </>
-                    )}
-                    <li><Link to="/Acceso">Acceso</Link></li>
                 </ul>
             </nav>
         </>
     );
 }
 
-// exportamos 
 export default Encabezado;
+

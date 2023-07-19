@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import React from "react";
 import axios from 'axios';
 
-function Login() {
+function LoginAdmin() {
     const [campos, setCampos] = useState({
         correo_electronico: "",
         contrasenia: "",
@@ -13,11 +13,11 @@ function Login() {
 
     const acceder = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/acceso', campos)
+        axios.post('http://localhost:8081/acceso_admin', campos)
             .then(respuesta => {
                 if (respuesta.data.Estatus === "Correcto") {
                     localStorage.setItem('Usuario', respuesta.data.usuario);
-                    navegacion('/Inicio');
+                    navegacion('/Dashboard1');
                 } else {
                     setError(respuesta.data.Error);
                 }
@@ -28,7 +28,7 @@ function Login() {
     return (
         <>
             <form className="login-form" onSubmit={acceder}>
-                <h2>Iniciar sesión</h2>
+                <h2>Login Admin</h2>
                 {error && <p className="error-message">{error}</p>}
                 <label htmlFor="correo_electronico">Email:</label>
                 <input type="email" id="correo_electronico" placeholder="Email" name="correo_electronico" className="email-input" onChange={(e) => setCampos({ ...campos, correo_electronico: e.target.value })} />
@@ -38,17 +38,11 @@ function Login() {
                 <div className="form-footer">
                     <Link to="/Registro">Registrarse</Link>
                 </div>
-                <div className="form-footer">
-                    <Link to="/Admin_Login">
-                        <button type="button">Login como admin</button>
-                    </Link>
-                </div>
             </form>
         </>
     )
 }
 
-export default Login;
-
+export default LoginAdmin;
 
 

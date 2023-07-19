@@ -13,6 +13,9 @@ import Compra from './Paginas/Compra';
 import Carrito from './Paginas/Carrito';
 import Acceso from './Paginas/Acceso';
 import Dashboard1 from './Paginas/Dashboard1';
+import Admin from './Paginas/Admin';
+import Admin_Login from './Paginas/Admin_Login';
+import Registro from './Paginas/Registro';
 
 
 
@@ -29,6 +32,9 @@ function App() {
         <Route path='/Carrito' element={<Carrito />}></Route>
         <Route path='/Acceso' element={<Acceso />}></Route>
         <Route path='/Dashboard1' element={<Dashboard1 />}></Route>
+        <Route path='/Admin' element={<Admin />}></Route>
+        <Route path='/Admin_Login' element={<Admin_Login />}></Route>
+        <Route path='/Registro' element={<Registro />}></Route>
         
         
         

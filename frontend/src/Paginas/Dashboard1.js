@@ -1,12 +1,19 @@
-
-
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 import "../css/Dashboard1.css";
 
 function Dashboard() {
+    const navegacion = useNavigate();
+
+    const cerrarSesion = () => {
+        localStorage.removeItem('Usuario');
+        navegacion('/Inicio');
+    }
+
     return (
         <div className="dashboard-container">
+            <button onClick={cerrarSesion} className="logout-button">Cerrar Sesión</button>
             <h1>Dashboard</h1>
             <div className="image-container">
                 <div className="item">
@@ -39,3 +46,4 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
