@@ -16,7 +16,9 @@ import Dashboard1 from './Paginas/Dashboard1';
 import Admin from './Paginas/Admin';
 import Admin_Login from './Paginas/Admin_Login';
 import Registro from './Paginas/Registro';
-
+import Mcat from './Paginas/Mcat';
+import Mpro from './Paginas/Mpro';
+import Musu from './Paginas/Musu';
 
 
 function App() {
@@ -35,6 +37,9 @@ function App() {
         <Route path='/Admin' element={<Admin />}></Route>
         <Route path='/Admin_Login' element={<Admin_Login />}></Route>
         <Route path='/Registro' element={<Registro />}></Route>
+        <Route path='/Mcat' element={<Mcat />}></Route>
+        <Route path='/Mpro' element={<Mpro />}></Route>
+        <Route path='/Musu' element={<Musu />}></Route>
         
         
         

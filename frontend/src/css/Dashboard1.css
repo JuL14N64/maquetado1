@@ -1,3 +1,11 @@
+.dashboard-container {
+  background-image: url("../images/metal.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px; /* Ajusta el padding según sea necesario */
+}
+
 .dashboard-container h1 {
   text-align: center;
   color: #333;
@@ -66,3 +74,4 @@
   background-color: #005c99;
   transform: scale(0.9);
 }
+

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 
 import "../css/Dashboard1.css";
 
@@ -19,13 +19,13 @@ function Dashboard() {
                 <div className="item">
                     <img src={require("../images/categoria.png")} alt="Categoría"></img>
                     <div className="item-overlay">
-                        <button className="button">Ver categoría</button>
+                        <Link to='/Mcat'><button className="button">Ver categoría</button></Link>
                     </div>
                 </div>
                 <div className="item">
                     <img src={require("../images/productos.png")} alt="Productos"></img>
                     <div className="item-overlay">
-                        <button className="button">Ver productos</button>
+                    <Link to='/Mpro'><button className="button">Ver productos</button></Link>
                     </div>
                 </div>
                 <div className="item">
@@ -37,7 +37,7 @@ function Dashboard() {
                 <div className="item">
                     <img src={require("../images/usuarios.png")} alt="Usuarios"></img>
                     <div className="item-overlay">
-                        <button className="button">Ver usuarios</button>
+                    <Link to='/Musu'><button className="button">Ver usuarios</button></Link>
                     </div>
                 </div>
             </div>

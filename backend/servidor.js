@@ -81,6 +81,91 @@ app.post('/registrar', (peticion, respuesta) => {
         });
 });
 
+
+//Mcategorias 
+
+
+app.post('/agregarCategoria', (peticion, respuesta) => {
+    const { nombre, descripcion } = peticion.body;
+    const sql = "INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)";
+    conexion.query(sql, [nombre, descripcion], (error, resultado) => {
+        if (error) {
+            return respuesta.json({ Estatus: "Error", Error: "Error al agregar la categoría" });
+        }
+        return respuesta.json({ Estatus: "Correcto" });
+    });
+});
+
+app.post('/eliminarCategoria', (peticion, respuesta) => {
+    const { id } = peticion.body;
+    const sql = "DELETE FROM categorias WHERE id = ?";
+    conexion.query(sql, [id], (error, resultado) => {
+        if (error) {
+            return respuesta.json({ Estatus: "Error", Error: "Error al eliminar la categoría" });
+        }
+        return respuesta.json({ Estatus: "Correcto" });
+    });
+});
+
+
+//Mprod
+
+app.post('/agregarProducto', (peticion, respuesta) => {
+    const { nombre, descripcion } = peticion.body;
+    const sql = "INSERT INTO productos (nombre, descripcion) VALUES (?, ?)";
+    conexion.query(sql, [nombre, descripcion], (error, resultado) => {
+        if (error) {
+            return respuesta.json({ Estatus: "Error", Error: "Error al agregar el producto" });
+        }
+        return respuesta.json({ Estatus: "Correcto" });
+    });
+});
+
+app.post('/eliminarProducto', (peticion, respuesta) => {
+    const { id } = peticion.body;
+    const sql = "DELETE FROM productos WHERE id = ?";
+    conexion.query(sql, [id], (error, resultado) => {
+        if (error) {
+            return respuesta.json({ Estatus: "Error", Error: "Error al eliminar el producto" });
+        }
+        return respuesta.json({ Estatus: "Correcto" });
+    });
+});
+
+
+//Musuarios
+
+app.get('/obtenerUsuarios', (peticion, respuesta) => {
+    const sql = "select * from usuarios1";
+    conexion.query(sql, (error, resultado) => {
+        if (error) return respuesta.json({ mensaje: "error" });
+        return respuesta.json({ mensaje: "exitoso", contenido: resultado });
+    });
+});
+
+app.post('/agregarUsuario', (peticion, respuesta) => {
+    const { correo_electronico, contrasenia } = peticion.body;
+    const sql = "INSERT INTO usuarios1 (correo_electronico, contrasenia) VALUES (?, SHA1(?))";
+    conexion.query(sql, [correo_electronico, contrasenia], (error, resultado) => {
+        if (error) {
+            return respuesta.json({ Estatus: "Error", Error: "Error al agregar el usuario" });
+        }
+        return respuesta.json({ Estatus: "Correcto" });
+    });
+});
+
+app.post('/eliminarUsuario', (peticion, respuesta) => {
+    const { id } = peticion.body;
+    const sql = "DELETE FROM usuarios1 WHERE id = ?";
+    conexion.query(sql, [id], (error, resultado) => {
+        if (error) {
+            return respuesta.json({ Estatus: "Error", Error: "Error al eliminar el usuario" });
+        }
+        return respuesta.json({ Estatus: "Correcto" });
+    });
+});
+
+
 app.listen(8081, () => {
     console.log("Servidor iniciado");
 });
