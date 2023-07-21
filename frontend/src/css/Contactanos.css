@@ -218,7 +218,7 @@ body{
 }
 
 #contact-form-section {
-    background-color: #9DCFDD;
+    background-color: #000000;
     padding: 20px;
     width: 30%;
     margin-top: 100px;
@@ -255,6 +255,32 @@ body{
   button[type="submit"]:hover {
     background-color: #45a049;
   }
+
+
+  /* Estilos para la sección de contacto */
+
+#contact-section,
+#contact-title,
+#contact-description {
+    color: white; /* Cambia el color del texto a blanco */
+}
+
+#contact-form-section {
+    color: white; /* Cambia el color del texto en el formulario a blanco */
+}
+
+label {
+    color: white; /* Cambia el color de las etiquetas de los campos a blanco */
+}
+
+textarea,
+input[type="email"] {
+    color: black; /* Cambia el color del texto de los campos de entrada a negro */
+}
+
+button[type="submit"] {
+    color: white; /* Cambia el color del texto del botón de enviar a blanco */
+}
 
   
   

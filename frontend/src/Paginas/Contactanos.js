@@ -43,10 +43,7 @@ function Contactanos() {
               </form>
             </section>
           </main>
-          <footer>
-            <p>Copyright © 2023 CITHE tools and machines</p>
-            <p>Correo: cithe@experts.com Telefono: 899736212</p>
-          </footer>
+         
         </body>
       </>
       

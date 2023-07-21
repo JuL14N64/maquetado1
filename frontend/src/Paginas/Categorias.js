@@ -12,7 +12,7 @@ function Categorias() {
         <>
             <Encabezado />
             <div className="container">
-                <h1>Estas son las categorias de nuestra empresa:</h1>
+                <h1></h1>
                 <Mascota/>
             </div>
         </>
