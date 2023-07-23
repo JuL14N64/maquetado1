@@ -13,7 +13,7 @@ function Contactanos() {
     return (
         <>
         <Encabezado />
-        <body>
+        
           <main>
             <section>
               <h2 id="contact-title">Contáctanos</h2>
@@ -44,7 +44,7 @@ function Contactanos() {
             </section>
           </main>
          
-        </body>
+       
       </>
       
     )

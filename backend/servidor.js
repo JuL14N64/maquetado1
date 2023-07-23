@@ -2,10 +2,16 @@ import express from 'express';
 import mysql from 'mysql';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
+import multer from 'multer';
+import path from 'path';
+
+
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+
 
 const conexion = mysql.createConnection({
     host: 'localhost',
@@ -21,6 +27,31 @@ conexion.connect(function (error) {
         console.log("Conectado exitosamente");
     }
 });
+
+
+
+
+//path
+
+
+const __dirname = path.resolve();
+
+//multer
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.resolve(__dirname, 'uploads'));
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+
+
+const upload = multer({ storage: storage });
+
+
+
 
 app.get('/obtenerProductos', (peticion, respuesta) => {
     const sql = "select * from productos";
@@ -85,10 +116,11 @@ app.post('/registrar', (peticion, respuesta) => {
 //Mcategorias 
 
 
-app.post('/agregarCategoria', (peticion, respuesta) => {
+app.post('/agregarCategoria', upload.single('imagen'), (peticion, respuesta) => {
     const { nombre, descripcion } = peticion.body;
-    const sql = "INSERT INTO categorias (nombre, descripcion) VALUES (?, ?)";
-    conexion.query(sql, [nombre, descripcion], (error, resultado) => {
+    const imagen = peticion.file.filename; // Obtenemos el nombre de la imagen almacenada por multer
+    const sql = "INSERT INTO categorias (nombre, descripcion, imagen) VALUES (?, ?, ?)";
+    conexion.query(sql, [nombre, descripcion, imagen], (error, resultado) => {
         if (error) {
             return respuesta.json({ Estatus: "Error", Error: "Error al agregar la categoría" });
         }
@@ -110,16 +142,18 @@ app.post('/eliminarCategoria', (peticion, respuesta) => {
 
 //Mprod
 
-app.post('/agregarProducto', (peticion, respuesta) => {
-    const { nombre, descripcion } = peticion.body;
-    const sql = "INSERT INTO productos (nombre, descripcion) VALUES (?, ?)";
-    conexion.query(sql, [nombre, descripcion], (error, resultado) => {
+app.post('/agregarProducto', upload.single('imagen'), (peticion, respuesta) => {
+    const { nombre, descripcion, precio } = peticion.body;
+    const imagen = peticion.file.filename; // Obtenemos el nombre de la imagen almacenada por multer
+    const sql = "INSERT INTO productos (nombre, descripcion, imagen, precio) VALUES (?, ?, ?, ?)";
+    conexion.query(sql, [nombre, descripcion, imagen, precio], (error, resultado) => {
         if (error) {
             return respuesta.json({ Estatus: "Error", Error: "Error al agregar el producto" });
         }
         return respuesta.json({ Estatus: "Correcto" });
     });
 });
+
 
 app.post('/eliminarProducto', (peticion, respuesta) => {
     const { id } = peticion.body;
@@ -165,6 +199,39 @@ app.post('/eliminarUsuario', (peticion, respuesta) => {
     });
 });
 
+
+
+// Imagenes cat
+
+// Imagenes cat
+
+app.get('/obtenerImagen/:id', (peticion, respuesta) => {
+    const { id } = peticion.params;
+    const sql = "SELECT imagen FROM categorias WHERE id = ?";
+    conexion.query(sql, [id], (error, resultado) => {
+        if (error) {
+            return respuesta.status(500).json({ mensaje: "Error al obtener la imagen" });
+        }
+
+        if (resultado.length === 0) {
+            return respuesta.status(404).json({ mensaje: "Imagen no encontrada" });
+        }
+
+        const imagen = resultado[0].imagen;
+        respuesta.writeHead(200, { 'Content-Type': 'image/jpeg' });
+        respuesta.end(imagen, 'binary');
+    });
+});
+
+
+
+
+
+
+
+app.use('/uploads', express.static(path.resolve(__dirname, 'uploads')));
+
+  
 
 app.listen(8081, () => {
     console.log("Servidor iniciado");

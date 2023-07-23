@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+/* Eliminar subrayado en enlaces */
+a {
+  text-decoration: none;
+}
+
+/* Eliminar el color azul predeterminado en enlaces */
+a:link,
+a:visited {
+  color: inherit;
+}
+
+/* Eliminar el efecto de color al hacer hover sobre enlaces */
+a:hover,
+a:active {
+  color: inherit;
+}
+
+/* Estilo para el componente <Link> de React Router */
+/* Eliminar subrayado en enlaces */
+Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Eliminar el efecto de color al hacer hover sobre enlaces */
+Link:hover {
+  color: inherit;
+}
+

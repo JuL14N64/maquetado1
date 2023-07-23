@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import "../css/Mcat.css"; // Usamos el mismo CSS que para Mostrar_categorias
+import "../css/Mcat.css";
 
 function Mostrar_productos() {
     const [nombre, setNombre] = useState("");
     const [descripcion, setDescripcion] = useState("");
+    const [imagen, setImagen] = useState(null);
+    const [precio, setPrecio] = useState("");
     const [mensaje, setMensaje] = useState("");
     const [productos, setProductos] = useState([]);
 
@@ -20,14 +22,32 @@ function Mostrar_productos() {
         setDescripcion(e.target.value);
     };
 
+    const handleImagenChange = (e) => {
+        setImagen(e.target.files[0]);
+    };
+
+    const handlePrecioChange = (e) => {
+        setPrecio(e.target.value);
+    };
+
     const agregarProducto = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8081/agregarProducto', { nombre, descripcion })
+
+        // Crea un objeto FormData para enviar la imagen al servidor
+        const formData = new FormData();
+        formData.append("nombre", nombre);
+        formData.append("descripcion", descripcion);
+        formData.append("imagen", imagen); // Agrega la imagen al formulario
+        formData.append("precio", precio); // Agrega el precio al formulario
+
+        axios.post('http://localhost:8081/agregarProducto', formData)
             .then(respuesta => {
                 if (respuesta.data.Estatus === "Correcto") {
                     setMensaje("Se ha agregado un nuevo producto");
                     setNombre("");
                     setDescripcion("");
+                    setImagen(null); // Limpia el estado de la imagen después de agregar el producto
+                    setPrecio(""); // Limpia el estado del precio después de agregar el producto
                     obtenerProductos();
                 } else {
                     setMensaje("Error al agregar el producto");
@@ -82,6 +102,21 @@ function Mostrar_productos() {
                         onChange={handleDescripcionChange}
                         rows={4}
                     />
+                    <label htmlFor="imagen">Imagen:</label>
+                    <input
+                        type="file"
+                        id="imagen"
+                        name="imagen"
+                        onChange={handleImagenChange}
+                    />
+                    <label htmlFor="precio">Precio:</label>
+                    <input
+                        type="number"
+                        id="precio"
+                        name="precio"
+                        value={precio}
+                        onChange={handlePrecioChange}
+                    />
                     <button type="submit">Agregar</button>
                 </form>
                 <p>{mensaje}</p>
@@ -117,3 +152,4 @@ function Mostrar_productos() {
 }
 
 export default Mostrar_productos;
+
