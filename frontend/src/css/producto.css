@@ -175,7 +175,44 @@ footer {
 }
 
 /* Resto del CSS */
+/* producto.css */
 
+/* Estilos para el botón "Agregar al carrito" con animación */
+.agregar-al-carrito-btn {
+    background-color: #9dcfdd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .agregar-al-carrito-btn:hover {
+    background-color: #6ca9b8;
+  }
+  
+  /* Estilos para el mensaje de confirmación */
+  .mensaje {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #6ca9b8;
+    color: white;
+    border-radius: 5px;
+    animation: fadeOut 2s forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
 
 
 
