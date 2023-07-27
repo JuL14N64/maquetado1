@@ -36,7 +36,7 @@ function Registro() {
                 <button type="submit">Registrarse</button>
             </form>
             <div className="form-footer">
-                <Link to="/Login">Iniciar sesión</Link>
+                
             </div>
         </>
     )

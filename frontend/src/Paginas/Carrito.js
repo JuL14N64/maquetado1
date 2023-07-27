@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom"; // Importa el componente Link
 import Encabezado from "../Componentes/Encabezado";
 import { CarritoContext } from "../App";
 import "../css/Carrito.css";
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 function Carrito() {
   // Get the cart state and setter function from the context
@@ -11,6 +13,15 @@ function Carrito() {
   const eliminarProducto = (productoId) => {
     const nuevoCarrito = carrito.filter((item) => item.id !== productoId);
     setCarrito(nuevoCarrito);
+  };
+
+  // Función para calcular el total del carrito y mostrar solo 3 decimales
+  const calcularTotal = () => {
+    let total = 0;
+    carrito.forEach((item) => {
+      total += item.precio;
+    });
+    return total.toFixed(3); // Mostrar solo 3 decimales
   };
 
   return (
@@ -37,6 +48,24 @@ function Carrito() {
               </div>
             ))}
           </div>
+
+          {/* Mostrar la tabla con el total */}
+          <div className="carrito-total">
+            <h3>TOTAL</h3>
+            <p>Precio Total: {calcularTotal()}</p>
+          </div>
+          <PayPalScriptProvider>
+            <PayPalButtons></PayPalButtons>
+          </PayPalScriptProvider>
+
+          {/* Mostrar el botón "Comprar ahora" si hay productos en el carrito */}
+          {carrito.length > 0 ? (
+            <Link to={{ pathname: "/compra", search: `?total=${calcularTotal()}&${carrito.map((item) => `producto=${item.nombre}`).join('&')}` }}>
+              <button className="comprar-ahora-btn">Comprar ahora</button>
+            </Link>
+          ) : (
+            <p>Agrega Productos</p>
+          )}
         </div>
       </main>
     </>
@@ -44,3 +73,8 @@ function Carrito() {
 }
 
 export default Carrito;
+
+
+
+
+

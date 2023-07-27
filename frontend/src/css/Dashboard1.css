@@ -1,4 +1,6 @@
 
+
+
 .dashboard-container h1 {
   text-align: center;
   color: #333;
@@ -67,4 +69,12 @@
   background-color: #005c99;
   transform: scale(0.9);
 }
+
+.dashboard-container {
+  background-image: url("../images/fondo3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la página */
+}
+
 

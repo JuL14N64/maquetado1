@@ -33,12 +33,11 @@ function Mostrar_productos() {
     const agregarProducto = (e) => {
         e.preventDefault();
 
-        // Crea un objeto FormData para enviar la imagen al servidor
         const formData = new FormData();
         formData.append("nombre", nombre);
         formData.append("descripcion", descripcion);
-        formData.append("imagen", imagen); // Agrega la imagen al formulario
-        formData.append("precio", precio); // Agrega el precio al formulario
+        formData.append("imagen", imagen);
+        formData.append("precio", precio);
 
         axios.post('http://localhost:8081/agregarProducto', formData)
             .then(respuesta => {
@@ -46,8 +45,8 @@ function Mostrar_productos() {
                     setMensaje("Se ha agregado un nuevo producto");
                     setNombre("");
                     setDescripcion("");
-                    setImagen(null); // Limpia el estado de la imagen después de agregar el producto
-                    setPrecio(""); // Limpia el estado del precio después de agregar el producto
+                    setImagen(null);
+                    setPrecio("");
                     obtenerProductos();
                 } else {
                     setMensaje("Error al agregar el producto");
@@ -57,16 +56,19 @@ function Mostrar_productos() {
     };
 
     const eliminarProducto = (id) => {
-        axios.post('http://localhost:8081/eliminarProducto', { id })
-            .then(respuesta => {
-                if (respuesta.data.Estatus === "Correcto") {
-                    setMensaje("Se ha eliminado el producto");
-                    setProductos(prevProductos => prevProductos.filter(producto => producto.id !== id));
-                } else {
-                    setMensaje("Error al eliminar el producto");
-                }
-            })
-            .catch(error => console.log("Hay un error", error));
+        const confirmarEliminacion = window.confirm("¿Estás seguro de eliminar este producto?");
+        if (confirmarEliminacion) {
+            axios.post('http://localhost:8081/eliminarProducto', { id })
+                .then(respuesta => {
+                    if (respuesta.data.Estatus === "Correcto") {
+                        setMensaje("Se ha eliminado el producto");
+                        setProductos(prevProductos => prevProductos.filter(producto => producto.id !== id));
+                    } else {
+                        setMensaje("Error al eliminar el producto");
+                    }
+                })
+                .catch(error => console.log("Hay un error", error));
+        }
     };
 
     const obtenerProductos = () => {
@@ -127,7 +129,6 @@ function Mostrar_productos() {
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Descripción</th>
                             <th>Acciones</th>
@@ -136,7 +137,6 @@ function Mostrar_productos() {
                     <tbody>
                         {productos.map((producto) => (
                             <tr key={producto.id}>
-                                <td>{producto.id}</td>
                                 <td>{producto.nombre}</td>
                                 <td>{producto.descripcion}</td>
                                 <td>
@@ -152,4 +152,6 @@ function Mostrar_productos() {
 }
 
 export default Mostrar_productos;
+
+
 

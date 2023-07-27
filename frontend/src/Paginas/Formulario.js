@@ -21,11 +21,11 @@ function Compra() {
         contrasenia: ""
     });
     const [error, setError] = useState('');
-    // redireccionamiento
+  
     const navegacion = useNavigate();
 
     const registrar = (e) => {
-        e.preventDefault(); // previene que la pagina se regarge al enviar el formulario 
+        e.preventDefault(); 
         axios.post('http://localhost.8082/registrar', campos)
             .then(respuesta => {
                 if (respuesta.data.Estatus === "Correcto") {

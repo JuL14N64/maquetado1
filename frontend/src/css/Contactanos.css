@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+p{
+    color: #000000;
+}
+
+h2{
+    color:#000000;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 80px; /* Asegura que el contenido no se superponga con el footer */
@@ -150,6 +158,17 @@ footer{
 body{
     background-color: black;
 }
+
+#contact-form-section {
+    background-color: #000000;
+    padding: 20px;
+    width: 50%; /* Ajusta el ancho del formulario como desees */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 #contact-section {
     margin-top: 30px;
     background: black;
@@ -279,9 +298,8 @@ input[type="email"] {
 }
 
 button[type="submit"] {
-    color: white; /* Cambia el color del texto del botón de enviar a blanco */
-}
-
+    color: white;
+  }
   
   
 

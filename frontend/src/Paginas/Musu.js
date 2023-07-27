@@ -40,19 +40,22 @@ function Mostrar_usuarios() {
     };
 
     const eliminarUsuario = (id) => {
-        axios.post('http://localhost:8081/eliminarUsuario', { id })
-            .then(respuesta => {
-                if (respuesta.data.Estatus === "Correcto") {
-                    setMensaje("Se ha eliminado el usuario");
-                    obtenerUsuarios();
-                } else {
+        const confirmarEliminacion = window.confirm("¿Estás seguro de eliminar este usuario?");
+        if (confirmarEliminacion) {
+            axios.post('http://localhost:8081/eliminarUsuario', { id })
+                .then(respuesta => {
+                    if (respuesta.data.Estatus === "Correcto") {
+                        setMensaje("Se ha eliminado el usuario");
+                        obtenerUsuarios();
+                    } else {
+                        setMensaje("Error al eliminar el usuario");
+                    }
+                })
+                .catch(error => {
                     setMensaje("Error al eliminar el usuario");
-                }
-            })
-            .catch(error => {
-                setMensaje("Error al eliminar el usuario");
-                console.log("Hay un error", error);
-            });
+                    console.log("Hay un error", error);
+                });
+        }
     };
 
     const obtenerUsuarios = () => {
@@ -101,7 +104,6 @@ function Mostrar_usuarios() {
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Correo Electrónico</th>
                             <th>Acciones</th>
                         </tr>
@@ -109,7 +111,6 @@ function Mostrar_usuarios() {
                     <tbody>
                         {usuarios.map((usuario) => (
                             <tr key={usuario.id}>
-                                <td>{usuario.id}</td>
                                 <td>{usuario.correo_electronico}</td>
                                 <td>
                                     <button onClick={() => eliminarUsuario(usuario.id)}>Eliminar</button>
@@ -124,4 +125,5 @@ function Mostrar_usuarios() {
 }
 
 export default Mostrar_usuarios;
+
 

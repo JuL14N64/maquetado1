@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import "../css/Mcat.css";
 
-function Mostrar_categorias() {
+function Mcat() {
     const [nombre, setNombre] = useState("");
     const [descripcion, setDescripcion] = useState("");
-    const [imagen, setImagen] = useState(null); // Nuevo estado para almacenar la imagen
+    const [imagen, setImagen] = useState(null);
     const [mensaje, setMensaje] = useState("");
     const [categorias, setCategorias] = useState([]);
 
@@ -22,14 +22,12 @@ function Mostrar_categorias() {
     };
 
     const handleImagenChange = (e) => {
-        // Aquí obtenemos la imagen seleccionada por el usuario
         const imageFile = e.target.files[0];
         setImagen(imageFile);
     };
 
     const agregarCategoria = (e) => {
         e.preventDefault();
-        // Creamos un objeto FormData para enviar la imagen junto con los otros datos
         const formData = new FormData();
         formData.append("nombre", nombre);
         formData.append("descripcion", descripcion);
@@ -41,7 +39,7 @@ function Mostrar_categorias() {
                     setMensaje("Se ha agregado una nueva categoría");
                     setNombre("");
                     setDescripcion("");
-                    setImagen(null); // Reseteamos el estado de la imagen
+                    setImagen(null);
                     obtenerCategorias();
                 } else {
                     setMensaje("Error al agregar la categoría");
@@ -51,17 +49,19 @@ function Mostrar_categorias() {
     };
 
     const eliminarCategoria = (id) => {
-        axios.post('http://localhost:8081/eliminarCategoria', { id })
-            .then(respuesta => {
-                if (respuesta.data.Estatus === "Correcto") {
-                    setMensaje("Se ha eliminado la categoría");
-                    // Actualizar el estado local eliminando la categoría del estado
-                    setCategorias(prevCategorias => prevCategorias.filter(categoria => categoria.id !== id));
-                } else {
-                    setMensaje("Error al eliminar la categoría");
-                }
-            })
-            .catch(error => console.log("Hay un error", error));
+        const confirmarEliminacion = window.confirm("¿Estás seguro de eliminar esta categoría?");
+        if (confirmarEliminacion) {
+            axios.post('http://localhost:8081/eliminarCategoria', { id })
+                .then(respuesta => {
+                    if (respuesta.data.Estatus === "Correcto") {
+                        setMensaje("Se ha eliminado la categoría");
+                        setCategorias(prevCategorias => prevCategorias.filter(categoria => categoria.id !== id));
+                    } else {
+                        setMensaje("Error al eliminar la categoría");
+                    }
+                })
+                .catch(error => console.log("Hay un error", error));
+        }
     };
 
     const obtenerCategorias = () => {
@@ -97,7 +97,6 @@ function Mostrar_categorias() {
                         onChange={handleDescripcionChange}
                         rows={4}
                     />
-                    {/* Nuevo campo para subir imágenes */}
                     <label htmlFor="imagen">Imagen:</label>
                     <input
                         type="file"
@@ -115,7 +114,6 @@ function Mostrar_categorias() {
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Descripción</th>
                             <th>Acciones</th>
@@ -124,7 +122,6 @@ function Mostrar_categorias() {
                     <tbody>
                         {categorias.map((categoria) => (
                             <tr key={categoria.id}>
-                                <td>{categoria.id}</td>
                                 <td>{categoria.nombre}</td>
                                 <td>{categoria.descripcion}</td>
                                 <td>
@@ -139,7 +136,9 @@ function Mostrar_categorias() {
     );
 }
 
-export default Mostrar_categorias;
+export default Mcat;
+
+
 
 
 

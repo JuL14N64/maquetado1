@@ -225,6 +225,26 @@ app.get('/obtenerImagen/:id', (peticion, respuesta) => {
 
 
 
+// Ruta para insertar datos del formulario en la tabla "formularios"
+
+  // Ruta para insertar datos del formulario en la tabla "formularios"
+app.post('/insertarFormulario', (req, res) => {
+    const { comentarios, correo } = req.body;
+  
+    // Realiza la inserción en la tabla "formularios"
+    const sql = 'INSERT INTO formulario (comentarios, correo_electronico) VALUES (?, ?)';
+    conexion.query(sql, [comentarios, correo], (error, resultado) => {
+      if (error) {
+        console.error('Error al insertar datos en la tabla "formularios":', error);
+        res.status(500).json({ mensaje: 'Error al insertar datos en la tabla "formularios"' });
+      } else {
+        console.log('Datos insertados correctamente en la tabla "formularios".');
+        res.status(200).json({ mensaje: 'Datos insertados correctamente en la tabla "formularios"' });
+      }
+    });
+  });
+  
+
 
 
 
@@ -236,6 +256,25 @@ app.use('/uploads', express.static(path.resolve(__dirname, 'uploads')));
 app.listen(8081, () => {
     console.log("Servidor iniciado");
 });
+
+
+app.post('/insertarFormulario', (req, res) => {
+    const { comentarios, correo, nombreApellido, numero, numeroTarjeta, cvv, total, productos } = req.body;
+  
+    // Realiza la inserción en la tabla "formularios"
+    const sql = 'INSERT INTO formularios (comentarios, correo_electronico, nombre_apellido, numero, numero_tarjeta, cvv, total, productos) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+    conexion.query(sql, [comentarios, correo, nombreApellido, numero, numeroTarjeta, cvv, total, JSON.stringify(productos)], (error, resultado) => {
+      if (error) {
+        console.error('Error al insertar datos en la tabla "formularios":', error);
+        res.status(500).json({ mensaje: 'Error al insertar datos en la tabla "formularios"' });
+      } else {
+        console.log('Datos insertados correctamente en la tabla "formularios".');
+        res.status(200).json({ mensaje: 'Datos insertados correctamente en la tabla "formularios"' });
+      }
+    });
+  });
+
+  
 
 
 

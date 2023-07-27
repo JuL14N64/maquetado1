@@ -9,14 +9,13 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 80px;
-    /* Asegura que el contenido no se superponga con el footer */
+
 }
 
 header {
     background: #9DCFDD;
     padding: 20px;
     height: 122px;
-    /* Establece la altura fija del encabezado */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -30,11 +29,11 @@ header {
 
 #logo {
     width: 200px;
-    /* Ajusta el ancho de la imagen según tus necesidades */
+
     height: auto;
-    /* La altura se ajusta automáticamente para mantener la proporción */
+
     margin-right: 20px;
-    /* Espacio entre la imagen y el texto */
+
 }
 
 header p {

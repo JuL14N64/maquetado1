@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-image: url("../images/fondo3.png");
+    background-color: gray;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -264,6 +264,9 @@ section.container.py-5 .container {
     max-width: 33.33%;
 }
 
+#row{
+    align-items: center;
+}
 
 
 

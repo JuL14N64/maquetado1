@@ -64,4 +64,10 @@
     width: 100%;
 }
 
+/* Estilos para las etiquetas de email y contraseña */
+.email-label,
+.password-label {
+  color: black; /* Cambiar el color del texto a negro */
+}
+
 

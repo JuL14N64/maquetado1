@@ -21,6 +21,7 @@ import Registro from './Paginas/Registro';
 import Mcat from './Paginas/Mcat';
 import Mpro from './Paginas/Mpro';
 import Musu from './Paginas/Musu';
+import Mped from "./Paginas/Mped";
 
 export const CarritoContext = createContext();
 
@@ -28,10 +29,10 @@ function App() {
   const [carrito, setCarrito] = useState([]);
   return (
     <BrowserRouter>
-      {/* Proporciona el contexto del carrito y el estado del carrito a todos los componentes dentro de las rutas */}
+      {}
       <CarritoContext.Provider value={{ carrito, setCarrito }}>
         <Routes>
-          {/* Aquí están tus rutas existentes */}
+          {}
           <Route path='/Inicio' element={<Inicio />}></Route>
           <Route path='/Categorias' element={<Categorias />}></Route>
           <Route path='/Contactanos' element={<Contactanos />}></Route>
@@ -39,8 +40,7 @@ function App() {
           <Route path='/Login' element={<Login />}></Route>
           <Route path='/Compra' element={<Compra />}></Route>
 
-          {/* En lugar de usar <Carrito /> directamente aquí, 
-              utiliza un componente de función que contenga <Carrito /> y el contexto del carrito */}
+          {}
           <Route path='/Carrito' element={<ContenedorCarrito />} />
 
           <Route path='/Acceso' element={<Acceso />}></Route>
@@ -51,6 +51,7 @@ function App() {
           <Route path='/Mcat' element={<Mcat />}></Route>
           <Route path='/Mpro' element={<Mpro />}></Route>
           <Route path='/Musu' element={<Musu />}></Route>
+          <Route path='/Mped' element={<Mped />}></Route>
         </Routes>
       </CarritoContext.Provider>
     </BrowserRouter>

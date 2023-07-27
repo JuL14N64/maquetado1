@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import "../css/Encabezado.css";
 
 function Encabezado() {
-    const [login, setLogin] = useState(localStorage.getItem('Usuario')); // Cambiamos 'usuario' por 'Usuario'
+    const [login, setLogin] = useState(localStorage.getItem('Usuario')); 
     const navegacion = useNavigate();
 
     const salir = () => {
-        localStorage.removeItem('Usuario'); // Cambiamos 'clear' por 'removeItem'
-        setLogin(null); // Actualizamos el estado para ocultar el botón "Cerrar sesión"
-        navegacion('/Inicio'); // Redirigimos al usuario a "/Inicio" después de cerrar sesión
+        localStorage.removeItem('Usuario'); 
+        setLogin(null); 
+        navegacion('/Inicio'); 
     }
 
     return (
@@ -29,7 +29,7 @@ function Encabezado() {
                     <Link to="/Login" id="boton_perfil">
                         <img src={require("../images/Perfil1.png")} alt="Perfil" id="perfil"></img>
                     </Link>
-                    {login ? ( // Verificamos si el usuario ha iniciado sesión
+                    {login ? ( 
                         <>
                             <button onClick={salir}>Cerrar sesión</button>
                         </>
@@ -46,7 +46,7 @@ function Encabezado() {
                     <li><Link to="/Categorias">Categorías</Link></li>
                     <li><Link to="/Productos">Productos</Link></li>
                     <li><Link to="/Contactanos">Contáctanos</Link></li>
-                    <li><Link to="/Compra">Compra</Link></li>
+                   
                 </ul>
             </nav>
         </>

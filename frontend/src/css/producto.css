@@ -8,6 +8,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+h2{
+    text-align: center;
+}
+
 header {
     background: #9DCFDD;
     padding: 20px;
